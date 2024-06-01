@@ -14,6 +14,11 @@ int main()
     insertarNodo(7,raiz);
     insertarNodo(9,raiz);
 
+    //Formas RECURSIVAS
+    preOrdenRecursivo(raiz);
+    inOrdenRecursivo(raiz);
+    postOrdenRecursivo(raiz);
+
 }
 
 Nodo* insertarNodo(int dato, Nodo* raiz)
@@ -45,15 +50,17 @@ void preOrdenRecursivo(Nodo* raiz)
     preOrdenRecursivo(raiz->hijoDer);
 }
 
+
+
 void inOrdenRecursivo(Nodo* raiz)
 {
     if(raiz = nullptr){
         return;
     }
     
-    preOrdenRecursivo(raiz->hijoIzq);
+    inOrdenRecursivo(raiz->hijoIzq);
     cout<<raiz->dato<<"";
-    preOrdenRecursivo(raiz->hijoDer);
+    inOrdenRecursivo(raiz->hijoDer);
 }
 
 void postOrdenRecursivo(Nodo* raiz)
@@ -62,7 +69,7 @@ void postOrdenRecursivo(Nodo* raiz)
         return;
     }
 
-    preOrdenRecursivo(raiz->hijoIzq);
-    preOrdenRecursivo(raiz->hijoDer);
+    postOrdenRecursivo(raiz->hijoIzq);
+    postOrdenRecursivo(raiz->hijoDer);
     cout<<raiz->dato<<"";
 }
