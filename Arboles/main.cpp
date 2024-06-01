@@ -19,6 +19,8 @@ int main()
     inOrdenRecursivo(raiz);
     postOrdenRecursivo(raiz);
 
+    //Formas ITERATIVAS
+    
 }
 
 Nodo* insertarNodo(int dato, Nodo* raiz)
