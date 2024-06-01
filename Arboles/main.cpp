@@ -40,8 +40,9 @@ void preOrdenRecursivo(Nodo* raiz)
         return;
     }
 
-    
-
+    cout<<raiz->dato<<"";
+    preOrdenRecursivo(raiz->hijoIzq);
+    preOrdenRecursivo(raiz->hijoDer);
 }
 
 void inOrdenRecursivo(Nodo* raiz)
@@ -50,7 +51,9 @@ void inOrdenRecursivo(Nodo* raiz)
         return;
     }
     
-
+    preOrdenRecursivo(raiz->hijoIzq);
+    cout<<raiz->dato<<"";
+    preOrdenRecursivo(raiz->hijoDer);
 }
 
 void postOrdenRecursivo(Nodo* raiz)
@@ -59,4 +62,7 @@ void postOrdenRecursivo(Nodo* raiz)
         return;
     }
 
+    preOrdenRecursivo(raiz->hijoIzq);
+    preOrdenRecursivo(raiz->hijoDer);
+    cout<<raiz->dato<<"";
 }
