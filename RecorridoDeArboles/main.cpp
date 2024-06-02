@@ -73,7 +73,7 @@ void preOrdenIterativo(Nodo* &raiz)
         Nodo* aux = stack.top();
         stack.pop();
 
-        cout<<aux->dato<<" ";
+        cout<<aux->dato<<"";
 
         if(aux->hijoDer)
         {
@@ -89,62 +89,51 @@ void preOrdenIterativo(Nodo* &raiz)
 
 void inOrdenIterativo(Nodo* &raiz)
 {
-    if(raiz == nullptr){
-
-        return;
-    }
-
     stack<Nodo*> stack;
-    stack.push(raiz);
+    Nodo* aux = raiz;
 
-    while(!stack.empty())
+    while(aux ||!stack.empty())
     {
-        Nodo* aux = stack.top();
+        while(aux)
+        {
+            stack.push(aux);
+            aux = aux->hijoIzq;
+        }
+
+        aux = stack.top();
         stack.pop();
 
-        cout<<aux->dato<<" ";
-
-        if(aux->hijoDer)
-        {
-            stack.push(aux->hijoDer);
-        }
+        cout<<aux->dato<<"";
         
-
-        if(aux->hijoIzq)
-        {
-            stack.push(aux->hijoIzq);
-        }
+        aux = aux->hijoDer;  
     }
     
 }
 
 void postOrdenIterativo(Nodo* &raiz)
 {
-    if(raiz == nullptr){
-
-        return;
-    }
-
     stack<Nodo*> stack;
-    stack.push(raiz);
+    Nodo* ultimoVisto = nullptr;
+    Nodo* aux = raiz;
 
-    while(!stack.empty())
+    while(aux||!stack.empty())
     {
-        Nodo* aux = stack.top();
-        stack.pop();
-
-        cout<<aux->dato<<" ";
-
-        if(aux->hijoDer)
+        if(aux)
         {
-            stack.push(aux->hijoDer);
+            stack.push(aux);
+            aux = aux->hijoIzq;
+        } 
+        else
+        {
+            Nodo* temp = stack.top();
+            
         }
 
-        if(aux->hijoIzq)
-        {
-            stack.push(aux->hijoIzq);
-        }
+
     }
+
+
+
 }
 
 int main()
