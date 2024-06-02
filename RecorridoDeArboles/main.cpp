@@ -156,18 +156,24 @@ int main()
     insertarNodo(7,raiz);
     insertarNodo(9,raiz);
 
-    //Formas RECURSIVAS
+    cout<<"Formas RECURSIVAS"<<endl;
+    cout<<"Pre-Orden"<<endl;
     preOrdenRecursivo(raiz);
     cout<<""<<endl;
+    cout<<"In-Orden"<<endl;
     inOrdenRecursivo(raiz);
     cout<<""<<endl;
+    cout<<"Post-Orden"<<endl;
     postOrdenRecursivo(raiz);
     cout<<""<<endl;
 
-    //Formas ITERATIVAS
+    cout<<"Formas ITERATIVAS"<<endl;
+    cout<<"Pre-Orden"<<endl;
     preOrdenIterativo(raiz);
     cout<<""<<endl;
+    cout<<"In-Orden"<<endl;
     inOrdenIterativo(raiz);
     cout<<""<<endl;
+    cout<<"Post-Orden"<<endl;
     postOrdenIterativo(raiz);
 }
