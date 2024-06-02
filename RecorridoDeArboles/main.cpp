@@ -108,6 +108,7 @@ void inOrdenIterativo(Nodo* &raiz)
         {
             stack.push(aux->hijoDer);
         }
+        
 
         if(aux->hijoIzq)
         {
