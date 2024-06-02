@@ -112,28 +112,37 @@ void inOrdenIterativo(Nodo* &raiz)
 
 void postOrdenIterativo(Nodo* &raiz)
 {
+    if (raiz == nullptr)
+    {
+        return;
+    }
+    
     stack<Nodo*> stack;
     Nodo* ultimoVisto = nullptr;
-    Nodo* aux = raiz;
 
-    while(aux||!stack.empty())
+    while(raiz||!stack.empty())
     {
-        if(aux)
+        if(raiz)
         {
-            stack.push(aux);
-            aux = aux->hijoIzq;
+            stack.push(raiz);
+            raiz = raiz->hijoIzq;
         } 
         else
         {
             Nodo* temp = stack.top();
             
+            if(temp->hijoDer && ultimoVisto != temp->hijoDer)
+            {
+                raiz = temp->hijoDer;
+            }
+            else
+            {
+                cout<<temp->dato<<"";
+                ultimoVisto = temp;
+                stack.pop();
+            }
         }
-
-
     }
-
-
-
 }
 
 int main()
