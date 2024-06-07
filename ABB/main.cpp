@@ -61,11 +61,11 @@ void inOrdenRecursivo(Nodo* &raiz)
     inOrdenRecursivo(raiz->hijoDer);
 }
 
-Nodo* menorDeLosMayores(Nodo* raiz)
+Nodo* menorDeLosMayores(Nodo* &raiz)
 {
     Nodo* actual = raiz;
 
-    while(actual != nullptr)
+    while(actual->hijoIzq != nullptr && actual != nullptr)
     {
         actual = actual->hijoIzq;
     }
@@ -101,7 +101,7 @@ void eliminar(Nodo* &raiz, int datoAEliminar)
         }
         else
         {
-            Nodo* temp = menorDeLosMayores(raiz->hijoDer);
+            Nodo* temp = menorDeLosMayores(raiz->hijoDer);   
             raiz->dato = temp->dato;
             eliminar(raiz->hijoDer,temp->dato);
         }
