@@ -113,12 +113,13 @@ int main()
     Nodo* raiz = nullptr;
     raiz = insertarNodoRec(raiz, 5);
     insertarNodoRec(raiz,3);
-    insertarNodoRec(raiz,8);
+    insertarNodoRec(raiz,9);
     insertarNodoRec(raiz,2);
     insertarNodoRec(raiz,4);
     insertarNodoRec(raiz,7);
-    insertarNodoRec(raiz,9);
+    insertarNodoRec(raiz,10);
     insertarNodoRec(raiz,3); //Repetido para confirmar la Busqueda y revisión.
+    insertarNodoRec(raiz,8);
 
     cout<<"comprobar que se armó correctamente:"<<endl;
     inOrdenRecursivo(raiz);
