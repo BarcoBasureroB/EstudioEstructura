@@ -79,11 +79,6 @@ void eliminar(Nodo* &raiz, int datoAEliminar)
         return;
     }
 
-    Nodo* temp = menorDeLosMayores(raiz);
-    raiz->dato = temp->dato;
-    Nodo* borrar = busquedaRec(raiz->hijoDer,temp->dato);
-    delete borrar;
-
 }
 
 int main()
