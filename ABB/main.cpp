@@ -61,6 +61,31 @@ void inOrdenRecursivo(Nodo* &raiz)
     inOrdenRecursivo(raiz->hijoDer);
 }
 
+Nodo* menorDeLosMayores(Nodo* raiz)
+{
+    Nodo* actual = raiz;
+
+    while(actual != nullptr)
+    {
+        actual = actual->hijoIzq;
+    }
+    return actual;
+}
+
+void eliminar(Nodo* &raiz, int datoAEliminar)
+{
+    if(raiz == nullptr)
+    {
+        return;
+    }
+
+    Nodo* temp = menorDeLosMayores(raiz);
+    raiz->dato = temp->dato;
+    Nodo* borrar = busquedaRec(raiz->hijoDer,temp->dato);
+    delete borrar;
+
+}
+
 int main()
 {
     Nodo* raiz = nullptr;
@@ -74,6 +99,9 @@ int main()
     insertarNodoRec(raiz,3); //Repetido para confirmar la Busqueda y revisión.
 
     cout<<"comprobar que se armó correctamente:"<<endl;
+    inOrdenRecursivo(raiz);
 
+    eliminar(raiz,raiz->dato);
+    cout<<"comprobar que se eliminó correctamente:"<<endl;
     inOrdenRecursivo(raiz);
 }
